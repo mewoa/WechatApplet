@@ -1,0 +1,35 @@
+<!--pages/uploadFile/uploadFile.wxml-->
+<form bindsubmit='submit'>
+  <view class="cu-form-group">
+    <view class="title">文件名称</view>
+    <input placeholder="文件名字" name = "name"></input>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="title">文件类别</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index?picker[index]:'选择类别'}}
+      </view>
+    </picker>
+  </view>
+
+<view class="cu-form-group">
+  <view class="action">
+    <text class="icon-title text-orange "></text>上传文件
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-orange shadow" bindtap="choose" disabled= "{{up}}" data-target="Modal">
+    <view wx:if="{{up}}">
+    已经
+    </view>
+    从微信聊天选择
+    
+    </button>
+  </view>
+</view>
+  
+<view class="cu-form-group">
+<text decode='true'></text><button class="cu-btn bg-pink shadow" form-type='submit'>上传</button>
+</view>
+</form>

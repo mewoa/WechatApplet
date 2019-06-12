@@ -1,0 +1,93 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/searchRes/searchRes",
+    "pages/aboutme/aboutme",
+    "pages/history/history",
+    "pages/course/course",
+    "pages/modifyInfo/modifyInfo",
+    "pages/uploadInfo/uploadInfo",
+    "pages/modifyCourse/modifyCourse",
+    "pages/info/info",
+    "pages/allManage/allManage",
+    "pages/info_dt/info_dt",
+    "pages/uploadCourse/uploadCourse",
+    "pages/uploadFile/uploadFile",
+    "pages/index/index",
+    "pages/knowledge/knowledge",
+    "pages/indexes/indexes",
+    "pages/videoPlay/videoPlay",
+    "pages/template/template",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/registerStudent/registerStudent",
+    "pages/registerTeacher/registerTeacher"
+  ],
+  "window": {
+  
+    "backgroundColor": "white",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#EA6CAF",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#E4393C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/bar/home.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程",
+        "iconPath": "images/bar/course.png"
+      },
+      {
+        "pagePath": "pages/knowledge/knowledge",
+        "text": "知识",
+        "iconPath": "images/bar/knowledge.png"
+      },
+      {
+        "pagePath": "pages/info/info",
+        "text": "通知",
+        "iconPath": "images/bar/info.png"
+      },
+      {
+        "pagePath": "pages/aboutme/aboutme",
+        "text": "我的",
+        "iconPath": "images/bar/mine.png"
+      }
+    ]
+  },
+
+  "usingComponents": {
+    "i-button": "dist/button/index",
+    "i-grid": "dist/grid/index",
+    "i-row": "dist/row/index",
+    "i-grid-item": "dist/grid-item/index",
+    "i-grid-icon": "dist/grid-icon/index",
+    "i-grid-label": "dist/grid-label/index",
+    "i-card": "dist/card/index",
+    "i-tabs": "dist/tabs/index",
+    "i-tab": "dist/tab/index",
+    "i-message": "dist/message/index",
+    "i-spin": "dist/spin/index",
+    "i-icon": "dist/icon/index",
+    "i-notice-bar": "dist/notice-bar/index",
+    "i-divider": "dist/divider/index",
+    "i-load-more": "dist/load-more/index",
+    "i-modal": "dist/modal/index",
+    "i-cell-group": "dist/cell-group/index",
+    "i-cell": "dist/cell/index",
+    "i-toast": "dist/toast/index"
+    
+  },
+  "sitemapLocation": "sitemap.json"
+}

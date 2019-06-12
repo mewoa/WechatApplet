@@ -1,0 +1,4 @@
+/* pages/info_dt/info_dt.wxss */
+page{
+  background: white;
+}

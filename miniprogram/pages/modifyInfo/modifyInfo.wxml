@@ -1,0 +1,11 @@
+<!--pages/modifyInfo/modifyInfo.wxml-->
+<form bindsubmit='submit'>
+  <view class="cu-form-group">
+    <textarea data-placeholder="{{infoContent}}" maxlength="1000" disabled="{{modalName!=null}}" placeholder-class="placeholder" class="{{textareaAValue?'value':''}}" style="height:100px"
+bindinput="textareaAInput" name = "txt">
+    </textarea>
+</view>
+  <view class="cu-form-group">
+    <text decode="{{true}}">&emsp;&emsp;</text><button class="cu-btn bg-green shadow" form-type='submit' >修改</button>
+  </view>
+  </form>

@@ -1,0 +1,77 @@
+<!--pages/searchRes/searchRes.wxml-->
+
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index == TabCur?'text-green cur':''}}" wx:for="{{lists}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</scroll-view>
+
+<import src="../template/template.wxml" />
+<swiper current="{{TabCur}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="switchSwiper"> 
+
+<swiper-item>
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="icon-title text-pink"></text> 以下为包含关键字"{{key}}"的课程
+  </view>
+</view>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{course}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+
+<swiper-item>
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="icon-title text-pink"></text> 以下为包含关键字"{{key}}"的知识
+  </view>
+</view>  
+<view wx:for="{{knowledge}}">  
+      <view class="courses">
+        <view class = "pic">
+          <image src="{{item.imagePath}}" mode = "aspectFit" style="width:80px;height:80px;"></image>
+        </view>
+        <view class = "base-info">
+        <view class = "name">{{item.fileName}}</view>
+        <view class = "info_know">下载次数：<text class = "times">{{item.downloadTimes}}</text></view>
+        <view class = "info_know">上传日期：<text class = "times">{{item.uploadDate}}</text></view>
+        <view class = "row_display">
+      <view class = "knowledge-btn" data-record="{{item._id}}" id = "{{item.fileId}}" bindtap="browse">打开</view>
+      </view>
+      </view>
+    </view>
+    <view class = "divLine_file"></view>
+</view>
+
+</swiper-item>
+
+
+<swiper-item>
+<view class="cu-bar bg-white">
+  <view class="action">
+    <text class="icon-title text-pink"></text> 以下为标题包含关键字"{{key}}"的通知
+  </view>
+</view>  
+<view wx:for = "{{info}}">
+<i-cell-group>
+    <i-cell title="{{item.title}}" only-tap-footer  
+    label = "{{item.content}}"
+    bindtap="option" data-docid = "{{item._id}}" data-Ind = "{{index}}" data-infocontent = "{{item.content}}"></i-cell>
+</i-cell-group>
+</view>
+</swiper-item>
+
+
+
+
+
+  </swiper>
+  

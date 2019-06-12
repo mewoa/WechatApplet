@@ -1,0 +1,135 @@
+<!--pages/allManage/allManage.wxml-->
+
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{!isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+
+<!--列出通知信息，执行删除和编辑操作-->
+<i-message id="message" />
+<view wx:if="{{index==0}}">
+<view wx:for = "{{infoDetail}}">
+<i-cell-group>
+    <i-cell title="{{item.title}}" only-tap-footer  
+    label = "{{item.content}}"
+    bindtap="option" data-docid = "{{item._id}}" data-Ind = "{{index}}" data-infocontent = "{{item.content}}"></i-cell>
+</i-cell-group>
+</view>
+</view>
+
+<!--列出课件信息，执行删除操作-->
+<view wx:if="{{index==1}}">
+
+<view wx:if= "{{empty==true}}">
+  您还没有上传过任何课件！
+</view>
+
+
+<view wx:if="{{empty == false}}">
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index == TabCur?'text-green cur':''}}" wx:for="{{tmpIndex}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{courseTeach[item]}}
+  </view>
+</scroll-view>
+
+
+
+
+<swiper current="{{TabCur}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="switchSwiper"> 
+
+<view wx:for="{{fileDetail}}">
+<swiper-item>  
+  <view wx:for="{{item}}" wx:key="*this" wx:for-item="twodata">
+      <view class="courses">
+        <view class = "pic">
+          <image src="{{twodata.imagePath}}" mode = "aspectFit" style="width:80px;height:80px;"></image>
+        </view>
+        <view class = "base-info">
+        <view class = "name">{{twodata.fileName}}</view>
+        <view class = "info_know">下载次数：<text class = "times">{{twodata.downloadTimes}}</text></view>
+        <view class = "info_know">上传日期：<text class = "times">{{twodata.uploadDate}}</text></view>
+        <view class = "row_display">
+      <view class = "knowledge-btn" data-record="{{twodata._id}}" id = "{{twodata.fileId}}" bindtap="browse">打开</view>
+       <text decode="{{true}}">&emsp;</text>
+      <view class = "knowledge-btn" data-record="{{twodata._id}}" data-fid ="{{twodata.fileId}}" bindtap="delete">删除</view>
+      </view>
+      </view>
+    </view>
+    <view class = "divLine_file"></view>
+</view>
+</swiper-item>
+</view>
+</swiper>
+<!--一个item包含一个页面的所有内容-->
+</view>
+</view>
+
+
+
+
+
+<!--列出课程视频，执行删除操作-->
+<view wx:if="{{index==2}}">
+
+<view wx:if= "{{empty2==true}}">
+  您还没有上传过任何课程！
+</view>
+
+<view wx:if="{{empty2 == false}}">
+<import src="../template/template.wxml" />
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index == TabCur2?'text-green cur':''}}" wx:for="{{tmpIndex2}}" wx:key bindtap="tabSelect2" data-id="{{index}}">
+    {{courseTeach[item]}}
+  </view>
+</scroll-view>
+
+<swiper current="{{TabCur2}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="switchSwiper2"> 
+
+<view wx:for="{{courseDetail}}">
+<swiper-item>  
+<view class="row-container">
+<view class="content-wrapper">
+<scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+<block wx:for="{{item}}" wx:key="avid" wx:for-item="twodata">
+<view class="content-list">
+    <view class="item" >
+        <view class="top">
+      <view class="cover-img" bindtap = "courseOption" 
+      data-id="{{twodata._id}}" data-courseId ="{{twodata.courseId}}"
+      data-coursename="{{twodata.courseName}}" data-courseinfo ="{{twodata.info}}"
+        style="opacity: 1; background-image:url({{twodata.imagePath}});">
+        </view>
+        </view>
+        <view class="info">
+        <view class="title">{{twodata.courseName}}</view>
+      <text class="icon-attentionfill margin-lr-xs"></text>{{twodata.hot}}
+      <text class="icon-appreciatefill margin-lr-xs"></text>{{twodata.good}}
+        </view>
+    </view>
+    </view>
+
+
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+</view>
+</swiper>
+</view>
+</view>
+
+<i-modal title="您想做什么？" visible="{{ visible5 }}" actions="{{ actions5 }}" action-mode="{{ vertical }}" bind:click="handleClick5" >
+</i-modal>
+
+
+
+
+
+
+
+
+<i-modal title="您想做什么" visible="{{ visible3 }}" actions="{{ actions3 }}" bind:click="handleClick3" action-mode="{{ vertical}}">
+</i-modal>
+

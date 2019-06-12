@@ -1,0 +1,155 @@
+<!--pages/course/course.wxml-->
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{!isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+
+
+<import src="../template/template.wxml" />
+<view bindtap = "refresh" class = "refresh">
+<button class="cu-btn bg-green shadow" >点击刷新</button>
+</view>
+<scroll-view scroll-x class="bg-white nav" scroll-with-animation scroll-left="{{scrollLeft}}">
+  <view class="cu-item {{index == TabCur?'text-green cur':''}}" wx:for="{{lists}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{item}}
+  </view>
+</scroll-view>
+
+<swiper current="{{TabCur}}" style="height: {{clientHeight?clientHeight+'px':'auto'}}"  bindchange="switchSwiper"> 
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{cyy}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{byyl}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{sjjg}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+
+  <swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{rjgc}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{jsjwl}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{hbyl}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{dlyl}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{linux}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{sdjs}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+<swiper-item>  
+  <view class="row-container">
+    <view class="content-wrapper">
+      <scroll-view style="height: {{clientHeight?clientHeight+'px':'auto'}}" scroll-y="true">
+        <block wx:for="{{czxt}}" wx:key="avid">
+          <!-- 使用热门推荐模板，传入当前循环对象item -->
+          <template is="video" data="{{...item}}"/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  </swiper-item>
+
+</swiper> 
+

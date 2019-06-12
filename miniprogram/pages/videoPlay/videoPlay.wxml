@@ -1,0 +1,105 @@
+<!--pages/videoPlay/videoPlay.wxml-->
+<!--获取集数展示,一个按钮对应一个源,加入评论信息,考虑如何存储评论等功能-->
+<view class="section" >
+  <video bindplay='playHit' custom-cache="{{false}}" bindpause="pauseHit"  bindended="endHit" id="myVideo" class = "video" title="编译原理"  src="{{videoDetail[index].fileId}}" binderror="videoErrorCallback" object-fit = "cover"></video>
+</view>
+
+
+<i-tabs current="{{TabCur}}" color="#f759ab" bindchange="handleChangeScroll" scroll-with-animation>
+  <i-tab key="tab1" title="简介信息"></i-tab>
+  <i-tab key="tab2" title="评论"></i-tab>
+</i-tabs>
+
+<view wx:if="{{tab1}}" class = "bgcolor">
+
+<!--加入用户头像-->
+  <view class="padding">
+  <view class="cu-avatar lg round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg);"></view>
+  <text class = "userName">{{UserName}}</text>
+  </view>
+
+  <view class="page_title"><text decode='true'>&ensp;&ensp;{{courseDetail.courseName}}</text></view>
+  <view class = "border_5">
+  <view class="text-gray text-sm">
+  {{courseDetail.info}}
+  </view>
+  </view>
+
+
+  <view class="border_10">
+  <view class="text-gray text-sm">
+    <text decode='true'>&ensp;&ensp;</text><text class="icon-attentionfill margin-lr-xs" decode='true'><text decode="{{true}}">&emsp;</text>{{courseDetail.hot}}</text>
+    <text class="icon-appreciatefill margin-lr-xs"><text decode="{{true}}">&emsp;</text>{{courseDetail.good}}  </text>
+    <text decode="{{true}}">&emsp;{{videoDetail[index].uploadDate}}</text>
+  </view>
+  </view>
+
+
+<text decode='true'>&emsp;&emsp;&emsp;</text>
+  <button bindtap="good" class="cu-btn round bg-white lg margin{{shadow?'shadow':''}}">
+    <text class="icon-appreciate" decode = "true">&emsp;<text class = "pink">点赞</text></text></button>
+ <button open-type='share' class="cu-btn round bg-white lg margin {{shadow?'shadow':''}}">
+    <text class="icon-share" decode='true'>&emsp;<text class = "pink">分享</text></text></button>
+
+
+
+<text>\n</text>
+<view class = "border_5">
+<view class="text-gray">选集</view>
+</view>
+
+<scroll-view scroll-x="true" style="height:70px; white-space: nowrap;">
+<view class="form">
+<view wx:for="{{parts}}">
+<button class="cu-btn bg-green margin" bindtap = "videoCho" data-id="{{index}}">课时{{item+1}}</button>
+</view>
+ </view>
+</scroll-view>
+
+</view>
+
+
+<view wx:if="{{tab2}}" class = "bgcolor">
+<view wx:for="{{liuyanlist}}" wx:key="liuyanlist" class="liuyanview">
+  <view class="headimg"><image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big25002.jpg"></image></view>
+  <view class="nickname_liuyantext">
+    <view class="nickname">用户{{item.studentId}} <view class="time">{{item.uploadDate}}</view></view>
+    <view class="text">{{item.content}}</view>
+  </view>
+  <!-- 占位符 -->
+  <view style="width:100%;height:10px;"></view>
+</view>
+<form bindsubmit='submit'>
+<view class="cu-bar foot input" style="bottom:0px;position:fixed;">
+
+  <input value="{{inputValue}}"  bindinput="bindKeyInput" name="txt" disabled='{{!student}}' class="solid-bottom" bindfocus="InputFocus" bindblur="InputBlur" adjust-position="{{false}}" focus="{{false}}" maxlength="300" cursor-spacing="10" placeholder='输入评论'></input>
+  <button form-type='submit' disabled='{{!student}}' class="cu-btn bg-green shadow">评论</button>
+  
+  </view>
+  </form>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

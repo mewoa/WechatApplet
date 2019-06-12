@@ -1,0 +1,181 @@
+/* pages/knowledge/knowledge.wxss */
+.refresh{
+position:fixed;
+bottom: 30px;
+right: 2px;
+z-index: 10;
+}
+
+
+.navbg{
+  color:#000000;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.times{
+  color:red;
+}
+
+.VerticalNav.nav {
+  width: 200rpx;
+  white-space: initial;
+  height:100%;
+}
+
+.VerticalNav.nav .cu-item {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 0;
+  border: none;
+  height: 10%;
+  position: relative;
+}
+
+.VerticalNav.nav .cu-item.cur {
+  background-color: #f1f1f1;
+}
+.VerticalNav.nav .cu-item.cur::after {
+  content: "";
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 10rpx 0 0 10rpx;
+  position: absolute;
+  background-color: currentColor;
+  top: 0;
+  right: 0rpx;
+  bottom: 0;
+  margin: auto;
+}
+.VerticalBox{
+  display: flex;
+}
+
+.VerticalMain{
+  background-color: #f1f1f1;
+}
+
+.course{
+display: flex;
+flex-direction: row;
+width: 100%;
+margin: 0 auto;
+margin-bottom: 10px;
+align-items: center;
+}
+
+.pic image{
+  width:80px;
+  height:80px;
+  padding: 10px;
+  margin:10px 30px; 
+}
+
+.base-info{
+  font-size: 13px;
+  padding-top: 10px;
+  line-height: 20px;
+}
+.row_display{
+  display: flex;
+  flex-direction: row;
+}
+
+
+.btn{
+  background: #f46366;
+  width: 80px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+
+.name{
+font-size: 15px;
+font-weight: bold;
+color:#000000;
+}
+
+
+
+.info{
+color:#555555;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.nav{
+  width: 100%;
+  height:36px;
+}
+
+.scroll-view_H{
+  height:40px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+}
+
+.normal{
+  margin-left: 5px;
+  margin-right: 15px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+}
+
+.items{
+  margin-top:10px;
+  background: #dddddd;
+}
+
+.item{
+  background:#ffffff;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.title{
+
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.desc{
+  margin-left: 15px;
+   margin-right: 15px;
+  font-size: 13px;
+  color:#666666;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hr{
+  background: #dddddd;
+  height: 10px;
+}
+
+
+.select{
+  margin-left: 10px;
+  margin-right: 15px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 5rpx solid red;
+}
+

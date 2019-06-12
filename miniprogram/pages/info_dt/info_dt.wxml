@@ -1,0 +1,6 @@
+<!--pages/info_dt/info_dt.wxml-->
+
+<i-card title="{{title}}" full thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">{{content}}</view>
+    <view slot="footer">上传者：{{teacher}}<text decode='true'>&emsp;&emsp;</text>{{time}}</view>
+</i-card>

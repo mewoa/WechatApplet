@@ -1,0 +1,59 @@
+
+
+<image class="login-img" src="../../images/icon/register.png" style= "height:160px;"></image>
+
+<form bindsubmit='formSubmit'>
+  <view class = "item">
+    <view class = "name">学号：</view>
+    <view class = "val"><input name = "id" type = "text"/></view>
+  </view>
+  <view class = "item">
+    <view class = "name">姓名：</view>
+    <view class = "val"><input name = "name" type = "text"/></view>
+  </view>
+
+
+  <view class = "item">
+    <view class = "name">性别：</view>
+      <view class="section">
+        <picker bindchange="bindPickerChangeSex" value="{{sexIndex}}" range="{{sexArray}}">
+          <view class="picker">
+              -{{sexArray[sexIndex]}}-
+          </view>
+        </picker>
+      </view>
+    </view>
+  
+
+
+  <view class = "item">
+    <view class = "name">年级：</view>
+      <view class="section">
+        <picker bindchange="bindPickerChangeGrade" value="{{gradeIndex}}" range="{{gradeArray}}">
+          <view class="picker">
+              -{{gradeArray[gradeIndex]}}-
+          </view>
+        </picker>
+      </view>
+    </view>
+  <view class = "item">
+    <view class = "name">专业：</view>
+    <view class="section">
+        <picker bindchange="bindPickerChangeMajor" value="{{majorIndex}}" range="{{majorArray}}">
+          <view class="picker">
+              -{{majorArray[majorIndex]}}-
+          </view>
+        </picker>
+      </view>
+  </view>
+  <view class = "item">
+    <view class = "name">密码：</view>
+    <view class = "val"><input name = "password" type ="password"/></view>
+  </view>
+
+  <view class = "item">
+    <view class = "name">确认密码：</view>
+    <view class = "val"><input name = "passwordConfirm" type ="password"/></view>
+  </view>
+  <button class = "btn" type="primary" form-type='submit'>立即注册</button>
+</form>

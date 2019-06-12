@@ -1,0 +1,4 @@
+/* pages/uploadInfo/uploadInfo.wxss */
+page{
+  background: white;
+}

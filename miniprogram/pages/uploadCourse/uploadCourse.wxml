@@ -1,0 +1,52 @@
+<!--pages/uploadCourse/uploadCourse.wxml-->
+<form bindsubmit='submit'>
+  <view class="cu-form-group">
+    <view class="title"><text class="icon-title text-orange "></text>课程名称</view>
+    <input name = "title" placeholder="请输入课程名称"></input>
+  </view>
+
+   <view class="cu-form-group">
+    <view class="title"><text class="icon-title text-orange "></text>课程所属类别</view>
+    <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+      <view class="picker">
+        {{index?picker[index]:'请选择课程类别'}}
+      </view>
+    </picker>
+  </view>
+
+
+<view class="cu-form-group">
+    <textarea data-placeholder="请输入课程简介信息" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class="placeholder"  name = "txt" class="{{textareaAValue?'value':''}}" bindinput="textareaAInput"></textarea>
+  </view>
+
+  <view class="cu-bar bg-white margin-top">
+    <view class="action">
+      <text class="icon-title text-orange "></text>视频上传
+    </view>
+  </view>
+
+
+<scroll-view scroll-x="true" style="height:50px; white-space: nowrap;">
+<view class="cu-form-group">
+<view class = "form" wx:for="{{nums}}">
+<button class="cu-btn bg-red shadow ">课时{{item + 1}} {{durations[item]}}s</button>
+</view>
+      <button class="cu-btn bg-green shadow margin" bindtap = "ChooseVideo"> + 选择视频</button>
+ 
+
+ </view>
+</scroll-view>
+<view wx:if="{{up==false}}">
+<button class="cu-btn bg-green shadow margin" bindtap = "ChooseImage"> 
++ 选择一个封面</button>
+</view>
+
+<view wx:if="{{up==true}}">
+<button class="cu-btn bg-green shadow margin" disabled bindtap = "ChooseImage"> 
+已经选择
+</button>
+</view>
+  <view class="cu-form-group">
+    <text decode="{{true}}">&emsp;&emsp;</text><button class="cu-btn bg-pink shadow" form-type='submit'>确认发布</button>
+  </view>
+</form>

@@ -1,0 +1,87 @@
+<!--pages/aboutme/aboutme.wxml-->
+
+
+
+<view class = "backgrd" style="background-image:url(data:image/jpeg;base64,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);">
+<view class = 'head'>
+      <image class = "head-img" src = "../../images/icon/head.png"></image>
+      <view class="text-black">
+              <text class="text-cut">姓名：{{userInfo.data[0].name}}</text>
+      </view>
+      <view class="text-black">
+              <text class="text-cut">ID：{{userInfo.data[0].studentId}}</text>
+      </view>
+</view>
+</view>
+  
+<view wx:if="{{student == true}}">
+    <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item" bindtap='historyCheck'>
+      <view class="icon-global text-red"></view>
+      <text>学习记录</text>
+    </view>
+
+    <view class="cu-item" >
+      <view class="icon-male text-red"></view>
+      <text>性别-男</text>
+    </view>
+
+    <view class="cu-item">
+      <view class="icon-discover text-purple"></view>
+      <text>年级-15级</text>
+    </view>
+
+    <view class="cu-item">
+      <view class="icon-read text-pink"></view>
+      <text>专业-计算机科学与技术</text>
+    </view>
+
+    <view class="cu-item" bindtap='quit'>
+      <view class="icon-link text-red"></view>
+      <text>退出登录</text>
+    </view>
+  </view>
+</view>
+
+
+
+<view wx:if="{{student==false}}">
+    <view class="cu-list grid col-{{gridCol}} {{gridBorder?'':'no-border'}}">
+    <view class="cu-item" >
+      <view class="icon-male text-red"></view>
+      <text>性别-男</text>
+    </view>
+
+    <view class="cu-item" bindtap = "uploadChoose">
+      <view class="icon-upload text-purple"></view>
+      <text>上传课程/课件</text>
+    </view>
+
+
+    <view class="cu-item" bindtap = "manageChoose">
+      <view class="icon-edit text-pink"></view>
+      <text>管理我的发布</text>
+    </view>
+
+    <view class="cu-item" bindtap = "uploadInfo">
+      <view class="icon-info text-yellow"></view>
+      <text>发布通知</text>
+    </view>
+
+    
+
+    
+
+    <view class="cu-item" bindtap='quit'>
+      <view class="icon-link text-red"></view>
+      <text>退出登录</text>
+    </view>
+  </view>
+</view>
+
+<i-modal title="选择上传类型" visible="{{ visible4 }}" actions="{{ actions4 }}" action-mode="{{ vertical }}" bind:click="handleClick4" >
+</i-modal>
+
+
+<i-modal title="管理我的" visible="{{ visible5 }}" actions="{{ actions5 }}" action-mode="{{ vertical }}" bind:click="handleClick5" >
+</i-modal>

@@ -1,0 +1,4 @@
+/* pages/modifyCourse/modifyCourse.wxss */
+page{
+  background: white;
+}

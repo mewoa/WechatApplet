@@ -1,0 +1,36 @@
+/* pages/registerStudent/registerStudent.wxss */
+.content{
+  margin-top: 30px;
+}
+.item{
+  margin:10px;
+  display: flex;
+  flex-direction: row;
+}
+.login-img{
+  width: 750rpx;
+  border:0px;
+}
+.name{
+  width:100px;
+  text-align: right;
+  height: 28px;
+  line-height: 28px;
+  font-size: 15px;
+}
+
+.val{
+  width:230px;
+  height: 28px;
+  border:1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+.btn{
+  width:220px;
+  height: 45px;
+  line-height: 45px;
+  color:#ffffff;
+  border-radius: 50px;
+}

@@ -1,0 +1,19 @@
+<!--pages/template/template.wxml-->
+<template name="video">
+    <!-- List Item begin -->
+    <view class="content-list">
+    <navigator class="item" url='../videoPlay/videoPlay?courseId={{ courseId}}&parts={{parts}}'>
+        <view class="top">
+        <view class="cover-img"
+        style="opacity: 1; background-image:url({{imagePath}});">
+        </view>
+        </view>
+        <view class="info">
+        <view class="title">{{courseName}}</view>
+      <text class="icon-attentionfill margin-lr-xs"></text>{{hot}}
+      <text class="icon-appreciatefill margin-lr-xs"></text>{{good}}
+        </view>
+    </navigator>
+    </view>
+    <!-- List Item end -->
+</template>

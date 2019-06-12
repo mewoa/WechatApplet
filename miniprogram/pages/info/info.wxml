@@ -1,0 +1,27 @@
+<!--pages/info/info.wxml-->
+
+<view wx:for="{{notice}}" bindtap = "detail" data-title= "{{item.title}}" data-content = "{{item.content}}" data-teacher = "{{item.teacherId}}"
+data-time = "{{item.time}}">
+
+<view class="cu-list menu-avatar">
+  <view class="cu-item ">
+      <view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big81007.jpg);"></view>
+      <view class="content">
+        <view class="text-pink">
+          <text class="text-cut">{{item.title}}</text>
+        </view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">{{item.content}}</text>
+        </view>
+      </view>
+      <view class="action">
+        <view class="text-grey text-xs">{{item.time}}</view>
+        <view class="text-grey text-xs">by {{item.teacherId}}</view>
+      </view>
+    </view>
+    <view class="divLine_notice"></view>
+</view>
+</view>
+
+
+

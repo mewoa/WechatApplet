@@ -1,0 +1,73 @@
+<!--pages/login/login.wxml-->
+
+
+
+
+<view class="container">
+  <view class="login-icon">
+    <image class="login-img" src="../../images/icon/loginLog.png" style= "height:160px;"></image>
+  </view>
+  <view class="login-form">
+    <!--账号-->
+    <view class="inputView">
+      <image class="nameImage" src="../../images/icon/id.png"></image>
+      <label class="loginLab">账号</label>
+      <input class="inputText" placeholder="请输入学号/教工号" bindinput="idInput" />
+    </view>
+    <view class="line"></view>
+ 
+    <!--密码-->
+    <view class="inputView">
+      <image class="keyImage" src="../../images/icon/password.png"></image>
+      <label class="loginLab">密码</label>
+      <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+    </view>
+
+
+
+    <!--radio组件-->
+ 	<radio-group class="radio-group" bindchange="radioChange">
+		<label class="radio_label_0">
+			<radio value="student" checked="true" color='#00BFFF'></radio>学生
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+      <radio value="teacher" color='#00BFFF'></radio>教师
+		</label>
+	</radio-group>
+
+    <!--按钮-->
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button>
+
+    <button class="registerBtn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="register">新用户注册</button>
+    </view>
+  </view>
+</view>
+<view class = "weui-footer weui-footer_fixed-bottom">
+  <view class="weui-footer__text">1216485492@qq.com</view>
+</view>
+<view class="free-dialog {{ showDialog ? 'free-dialog--show' : '' }}">
+    <view class="free-dialog__mask" bindtap="toggleDialog" />
+    <view class="free-dialog__container">
+      <view style="padding: 5% 5% 15%;">
+        <form bindsubmit='submit' bindreset="reset">
+          <view bindtap='cancel' class="free-button free-dialog-reset">取消</view>
+          <view bindtap='confirm' class="free-button free-dialog-submit">确定</view>
+
+<view>
+<radio-group class="radio-group" bindchange="radioChanges">
+		<label class="radio_label_0">
+      注册类型：
+			<radio value="student" checked="true" color='#00BFFF'></radio>学生
+      <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;</text>
+      <radio value="teacher" color='#00BFFF'></radio>教师
+
+		</label>
+	</radio-group>
+  </view>
+        </form>
+      </view>
+    </view>
+  </view>
+
+
+

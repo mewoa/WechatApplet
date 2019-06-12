@@ -1,0 +1,270 @@
+<i-message id="message" />
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{!isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+<view bindtap = "refresh" class = "refresh">
+<button class="cu-btn bg-green shadow" >点击刷新</button>
+</view>
+<view class="VerticalBox">
+  <!--tab导航--> 
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height: calc(100vh - 0rpx) ">
+    <view class="cu-item {{index==TabCur?'text-pink cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+
+  <!--右侧正式内容-->
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height: calc(100vh - 0rpx) " scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+
+<view class="padding-top padding-lr" wx:key id="main-0">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>C语言</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{cyy}}" wx:key data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="padding-top padding-lr" wx:key id="main-1">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>编译原理</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{byyl}}" wx:key data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="padding-top padding-lr" wx:key id="main-2">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>数据结构</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{sjjg}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="padding-top padding-lr" wx:key id="main-3">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>软件工程</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{rjgc}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+<view class="padding-top padding-lr" wx:key id="main-4">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>计算机网络</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{jsjwl}}"data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="padding-top padding-lr" wx:key id="main-5">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>汇编原理</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{hbyl}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="padding-top padding-lr" wx:key id="main-6">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>电路原理</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{dlyl}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+<view class="padding-top padding-lr" wx:key id="main-7">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>linux</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{linux}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+<view class="padding-top padding-lr" wx:key id="main-8">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>数电技术</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{sdjs}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+<view class="padding-top padding-lr" wx:key id="main-9">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text>操作系统</view>
+      </view>
+      <view class="cu-list menu-avatar"> 
+        <view class="cu-item" wx:for="{{czxt}}" data-record="{{item._id}}" id = "{{item.fileId}}" wx:key bindtap = "browse">
+          <view class="cu-avatar radius lg" style="background-image:url({{item.imagePath}});"></view>
+          <view class="content">
+            <view class="text">{{item.fileName}}</view>
+            <view class="text-gray">
+              <text class="text-cut">
+							 上传者:{{item.teacherName}}
+              </text>
+            </view>
+          </view>
+          <view class="action">
+            <view class="text-grey text-xs">{{item.uploadDate}}</view>
+            <view class="text-grey text-xs">{{item.downloadTimes}} 次下载</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+
+<i-modal title="您想做什么？" visible="{{ visible5 }}" actions="{{ actions5 }}" action-mode="{{ vertical }}" bind:click="handleClick5" >
+</i-modal>

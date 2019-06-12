@@ -1,0 +1,14 @@
+<!--pages/uploadInfo/uploadInfo.wxml-->
+<form bindsubmit='submit'>
+  <view class="cu-form-group">
+    <view class="title">标题</view>
+    <input placeholder="输入通知标题" name = "title"></input>
+  </view>
+  <view class="cu-form-group">
+    <textarea data-placeholder="通知内容" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class="placeholder" class="{{textareaAValue?'value':''}}" bindinput="textareaAInput" name = "txt"></textarea>
+  </view>
+
+  <view class="cu-form-group">
+    <text decode="{{true}}">&emsp;&emsp;</text><button class="cu-btn bg-pink shadow" form-type='submit'>发布</button>
+  </view>
+  </form>

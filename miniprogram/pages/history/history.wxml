@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+  <view class="action" slot="right">
+    <view class="cu-load load-icon {{!isLoad?'loading':'over'}}"></view>
+  </view>
+</cu-custom>
+
+<view bindtap = "refresh" class = "refresh">
+<button class="cu-btn bg-green shadow" >点击刷新</button>
+</view>
+
+<view wx:for="{{courseDetail}}">
+<view class="cu-card article no-card" id="{{item[0]._id}}" data-courseid="{{item[0].courseId}}" data-parts = "{{item[0].parts}}" bindtap='videoPlay'>
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item[0].courseName}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item[0].imagePath}}" mode="aspectFill"></image>
+      <wxs module="filters" src="../filter.wxs"></wxs>
+    <view class="desc">
+      <view class = "m">课程类别：{{item[0].category}}</view>      
+      <view class = "m">上次学习：{{learnHistory[index].lastTime}}</view>
+      <view class = "m">学习总时长：{{filters.toFix(learnHistory[index].time/60)}}分钟</view>
+      <view class="text-gray text-sm text-right padding">
+    </view>
+      </view>
+    </view>
+  </view>
+</view>
+</view>

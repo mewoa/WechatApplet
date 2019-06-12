@@ -1,0 +1,311 @@
+/* pages/allManage/allManage.wxss */
+page{
+  background: white;
+}
+
+.divLine{
+ height: 1px;
+  border: none;
+  border-top:1px dashed grey;
+}
+
+.row-class{
+    background: #fff;
+}
+.col-class{
+    height: 32px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    background: #2d8cf0;
+    font-size: 12px;
+}
+.col-class.light{
+    background: #5cadff;
+}
+
+
+
+
+
+.times{
+  color:red;
+}
+.search-bar {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 70rpx;
+    padding: 10rpx;
+    background-color: #eee;
+    text-align: center;
+    box-shadow: 0 10rpx 60rpx rgba(0, 0, 0, .3);
+}
+
+.search-txt-plc {
+    color: #bfbfbf;
+}
+
+.list{
+  margin-top: 10px;
+  margin-bottom:10px; 
+}
+
+.course{
+display: flex;
+flex-direction: row;
+width: 45%;
+margin: 0 auto;
+border: 1px solid #cccccc;
+box-shadow: -3px 0px 9px #ececec, 0px -3px 9px  #ececec, 0px 9px #ececec, 0px
+0px 9px #ececec;
+margin-bottom: 10px;
+}
+
+.courses{
+display: flex;
+flex-direction: row;
+width: 100%;
+margin: 0 auto;
+margin-bottom: 10px;
+align-items: center;
+}
+
+.more{
+  color:#007aff;
+  font-size: 14px;
+  float:right;
+}
+
+
+
+
+
+
+.pic image{
+  width:80px;
+  height:80px;
+  padding: 10px;
+  margin:10px 20px; 
+}
+
+.base-info{
+  font-size: 13px;
+  padding-top: 10px;
+  line-height: 20px;
+}
+
+
+.btn{
+  background: #f46366;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  float: right;
+}
+
+.knowledge-btn{
+  background: #f46366;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.name{
+font-size: 15px;
+font-weight: bold;
+color:#000000;
+}
+
+.info{
+color:#555555;
+margin-top: 5px;
+margin-bottom: 5px;
+  float: left;
+}
+
+.info_know{
+  color:#555555;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+
+
+
+
+
+.banner-item {
+    width: 750rpx;
+    height: 300rpx;
+}
+
+.input{
+margin-top:10rpx; 
+width: 100%;
+height: 80rpx; 
+display:flex;
+align-items: center;
+text-align: center;
+border: 5px solid black;
+border-radius: 25px;
+}
+
+.img{
+width: 100%;
+height: 100%;
+}
+
+.swiper{
+  height: 400rpx;
+  width: 100%;
+}
+.page_title{
+    padding-top: 10px;
+    font-size: 18px;
+    color: red;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.userinfo, .uploader, .tunnel {
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-avatar:after {
+  border: none;
+}
+
+.userinfo-nickname {
+  font-size: 32rpx;
+  color: #007aff;
+  background-color: white;
+  background-size: cover;
+}
+
+.userinfo-nickname::after {
+  border: none;
+}
+
+.uploader, .tunnel {
+  height: auto;
+  padding: 0 0 0 40rpx;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.uploader-text, .tunnel-text {
+  width: 100%;
+  line-height: 52px;
+  font-size: 34rpx;
+  color: #007aff;
+}
+
+.uploader-container {
+  width: 100%;
+  height: 400rpx;
+  padding: 20rpx 20rpx 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.uploader-image {
+  width: 100%;
+  height: 360rpx;
+}
+
+.tunnel {
+  padding: 0 0 0 40rpx;
+}
+
+.tunnel-text {
+  position: relative;
+  color: #222;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tunnel-text:first-child {
+  border-top: none;
+}
+
+.tunnel-switch {
+  position: absolute;
+  right: 20rpx;
+  top: -2rpx;
+}
+
+.disable {
+  color: #888;
+}
+
+.service {
+  position: fixed;
+  right: 40rpx;
+  bottom: 40rpx;
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  background: linear-gradient(#007aff, #0063ce);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  transition: all 300ms ease;
+}
+
+.service-button {
+  position: absolute;
+  top: 40rpx;
+}
+
+.service:active {
+  box-shadow: none;
+}
+
+.request-text {
+  padding: 20rpx 0;
+  font-size: 24rpx;
+  line-height: 36rpx;
+  word-break: break-all;
+}

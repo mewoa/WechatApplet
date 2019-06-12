@@ -1,0 +1,17 @@
+/* pages/uploadCourse/uploadCourse.wxss */
+page{
+  background: white;
+}
+
+.hor {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.scr{
+  white-space:nowrap;
+  height:50px;
+
+
+}

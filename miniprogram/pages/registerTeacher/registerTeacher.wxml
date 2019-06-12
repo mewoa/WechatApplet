@@ -1,0 +1,61 @@
+<!--pages/registerTeacher/registerTeacher.wxml-->
+
+<image class="login-img" src="../../images/icon/register.png" style= "height:160px;"></image>
+
+<form bindsubmit='formSubmit'>
+  <view class = "item">
+    <view class = "name">教工号：</view>
+    <view class = "val"><input name = "id" type = "text"/></view>
+  </view>
+  <view class = "item">
+    <view class = "name">姓名：</view>
+    <view class = "val"><input name = "name" type = "text"/></view>
+  </view>
+  <view class = "item">
+    <view class = "name">性别：</view>
+      <view class="section">
+        <picker bindchange="bindPickerChangeSex" value="{{sexIndex}}" range="{{sexArray}}">
+          <view class="picker">
+              -{{sexArray[sexIndex]}}-
+          </view>
+        </picker>
+      </view>
+  </view>
+
+  <view class = "item">
+    <view class = "name">教授课程：</view>
+      <view class = "box">
+        <checkbox-group name = "box" bindchange="checkboxChange">
+          <view><checkbox value='C语言'></checkbox>C语言<text decode="{{true}}">&emsp;&emsp;&emsp;</text>
+          <checkbox value='编译原理'></checkbox>编译原理<text decode="{{true}}">&emsp;</text></view>
+          <view><checkbox value='数据结构'></checkbox>数据结构<text decode="{{true}}">&emsp;&ensp;</text> 
+          <checkbox value='软件工程'></checkbox>软件工程<text decode="{{true}}">&emsp;&emsp;</text></view> 
+          <view><checkbox value='计算机网络'></checkbox>计算机网络<text decode="{{true}}">&ensp;</text>
+          <checkbox value='汇编原理'></checkbox>汇编原理<text decode="{{true}}">&emsp;</text></view> 
+          <view><checkbox value='电路原理'></checkbox>电路原理<text decode="{{true}}">&emsp;&ensp;</text>
+          <checkbox value='Linux'></checkbox>Linux<text decode="{{true}}">&emsp;</text></view>
+          <view><checkbox value='数电技术'></checkbox>数电技术<text decode="{{true}}">&emsp;&ensp;</text>
+          <checkbox value='操作系统'></checkbox>操作系统<text decode="{{true}}">&emsp;</text></view>       
+        </checkbox-group>
+      </view>
+  </view>
+
+  <view class = "item">
+    <view class = "name">密码：</view>
+    <view class = "val"><input name = "password" type ="password"/></view>
+  </view>
+
+  <view class = "item">
+    <view class = "name">确认密码：</view>
+    <view class = "val"><input name = "passwordConfirm" type ="password"/></view>
+  </view>
+
+  <view class = "item">
+    <view class = "name">注册码：</view>
+    <view class = "val"><input name = "lock" placeholder='请填写教师注册码'/></view>
+  </view>
+
+
+  <button class = "btn" type="primary" form-type='submit'>立即注册          </button>
+</form>
+

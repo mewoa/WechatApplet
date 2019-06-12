@@ -1,0 +1,17 @@
+<!--pages/modifyCourse/modifyCourse.wxml-->
+<!--pages/uploadInfo/uploadInfo.wxml-->
+<form bindsubmit='submit'>
+  <view class="cu-form-group">
+    <view class="title">新课程名</view>
+    <input placeholder="{{courseName}}" name='title'></input>
+  </view>
+  <view class="cu-form-group">
+    <textarea data-placeholder="{{courseInfo}}" maxlength="1000" disabled="{{modalName!=null}}" placeholder-class="placeholder" class="{{textareaAValue?'value':''}}" style="height:100px"
+bindinput="textareaAInput" name = "txt">
+    </textarea>
+</view>
+
+  <view class="cu-form-group">
+    <text decode="{{true}}">&emsp;&emsp;</text><button class="cu-btn bg-green shadow" form-type='submit' >修改</button>
+  </view>
+  </form>

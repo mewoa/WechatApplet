@@ -1,0 +1,48 @@
+/* pages/searchRes/searchRes.wxss */
+page{
+  background: white;
+}
+.courses{
+display: flex;
+flex-direction: row;
+width: 100%;
+margin: 0 auto;
+margin-bottom: 10px;
+align-items: center;
+}
+.pic image{
+  width:80px;
+  height:80px;
+  padding: 10px;
+  margin:10px 20px; 
+}
+.base-info{
+  font-size: 13px;
+  padding-top: 10px;
+  line-height: 20px;
+}
+.name{
+font-size: 15px;
+font-weight: bold;
+color:#000000;
+}
+.info_know{
+  color:#555555;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.knowledge-btn{
+  background: #f46366;
+  width: 100px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.times{
+  color:red;
+}

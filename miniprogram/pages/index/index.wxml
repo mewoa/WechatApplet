@@ -1,0 +1,147 @@
+<i-message id="message" />
+<view class="box">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="icon-search"></text>
+      <input bindinput="bindKeyInput" placeholder='输入关键字查询课程、课件和通知' value="{{inputValue}}" name = "key" type="text" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button bindtap ='submit' class="cu-btn bg-green shadow-blur round">搜索</button>
+    </view>
+
+  </view>
+  
+</view>
+<view bindtap = "refresh" class = "refresh">
+<button class="cu-btn bg-green shadow" >点击刷新</button>
+</view>
+
+<swiper class="card-swiper {{DotStyle?'square-dot':'round-dot'}}" indicator-dots="true" circular="true" autoplay="true" interval="3000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{courseArray}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item}}" mode="aspectFill"></image>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="cu-bar bg-white">
+    <view class="action">
+      <text class="icon-titles text-green"></text>
+      <text class="text-xl text-bold">热门课程</text>
+    </view>
+</view>
+
+
+
+<view wx:for="{{courses}}" wx:if="{{index<3}}" wx:key="*this">
+<view class="cu-card article no-card" id="{{item._id}}" data-courseid="{{item.courseId}}" data-parts="{{item.parts}}" bindtap='detail'>
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut">{{item.courseName}}</view>
+    </view>
+    <view class="content">
+      <image src="{{item.imagePath}}" mode="aspectFill"></image>
+    <view class="desc">
+        <view class="text-content"> {{item.info}}</view>
+    <view class="text-gray text-sm text-right padding">
+      <text class="icon-attentionfill margin-lr-xs"></text>{{item.hot}}
+      <text class="icon-appreciatefill margin-lr-xs"></text>{{item.good}}
+      
+    </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class = "divLine_course" wx:if="{{index != 2}}"></view>
+</view>
+
+<navigator url="../../pages/course/course"
+            hover-class="navigator-hover"
+            open-type='switchTab'>
+    <text decode="{{true}}" class = "more">更多>>>&emsp;</text>
+  </navigator>
+
+
+
+
+<view>
+
+<view class="cu-bar bg-white">
+    <view class="action">
+      <text class="icon-titles text-green"></text>
+      <text class="text-xl text-bold">通知</text>
+    </view>
+  </view>
+
+<view wx:for="{{notice}}" wx:if="{{index < 3}}" wx:key="*this" bindtap="infoDetail" data-title= "{{item.title}}" data-content = "{{item.content}}" data-teacher = "{{item.teacherId}}"
+data-time = "{{item.time}}">
+  <view class="cu-list menu-avatar">
+    <view class="cu-item">
+      <view class="cu-avatar round lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg);"></view>
+      <view class="content">
+        <view class="text-grey">{{item.title}}</view>
+        <view class="text-gray text-sm flex">
+          <text class="text-cut">
+							<text class="margin-right-xs"></text> {{item.content}}
+          </text>
+        </view>
+      </view>
+       <view class="action">
+        <view class="text-grey text-xs">{{item.time}}</view>
+        <view class="cu-tag round bg-grey sm">by {{item.teacherId}}</view>
+      </view>
+      </view>
+      <view class = "divLine_notice" wx:if="{{index < 1}}"></view>
+    </view>
+</view>
+
+</view>
+<navigator url="../../pages/info/info"
+            hover-class="navigator-hover"
+            open-type='switchTab'>
+    <text decode="{{true}}" class = "more">更多>>>&emsp;</text>
+  </navigator>
+
+
+
+
+
+
+
+
+<view class="cu-bar bg-white">
+    <view class="action">
+      <text class="icon-titles text-green"></text>
+      <text class="text-xl text-bold">知识</text>
+    </view>
+  </view>
+
+<view wx:for="{{kng}}"  wx:if="{{index < 3}}" wx:key="*this">
+      <view class="courses">
+        <view class = "pic">
+          <image src="{{item.imagePath}}" mode = "aspectFit" style="width:80px;height:80px;"></image>
+        </view>
+        
+        <view class = "base-info">
+        <view class = "name">{{item.fileName}}</view>
+        <view class = "info_know">下载次数：<text class = "times">{{item.downloadTimes}}</text></view>
+        <view class = "info_know">上传日期：<text class = "times">{{item.uploadDate}}</text></view>
+        <view class = "info_know">by <text class = "times">{{item.teacherName}}</text></view>
+        <view class = "row_display">
+      <view class = "knowledge-btn" data-record="{{item._id}}" id = "{{item.fileId}}" bindtap="browse">打开</view>
+       <text decode="{{true}}">&emsp;</text>
+      <view class = "knowledge-btn" data-record="{{item._id}}" id ="{{item.fileId}}" bindtap="download">下载</view>
+      </view>
+        
+      </view>
+    </view>
+    <view class = "divLine_file"></view>
+</view>
+
+<navigator url="../../pages/knowledge/knowledge"
+            hover-class="navigator-hover"
+            open-type='switchTab'>
+    <text decode="{{true}}" class = "more">更多>>>&emsp;</text>
+</navigator>
+<!--><i-divider content="加载已经完成,没有其他数据"></i-divider>
